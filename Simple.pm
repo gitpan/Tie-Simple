@@ -3,7 +3,7 @@ package Tie::Simple;
 use strict;
 use warnings;
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 use Tie::Simple::Scalar;
 use Tie::Simple::Array;
@@ -149,7 +149,7 @@ sub TIESCALAR {
 	my ($class, $data, %subs) = @_;
 	die "Eat dirt and die! Use Tie::Simple and read the docs, you turkey!"
 		unless $class eq 'Tie::Simple';
-	bless { data => $data, isa => $isa, subs => \%subs }, 'Tie::Simple::Scalar';
+	bless { data => $data, subs => \%subs }, 'Tie::Simple::Scalar';
 }
 
 sub TIEARRAY {
