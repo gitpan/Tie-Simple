@@ -3,7 +3,7 @@ package Tie::Simple::Hash;
 use strict;
 use warnings;
 
-our $VERSION = '1.01';
+our $VERSION = '1.03';
 
 use base qw(Tie::Hash Tie::Simple);
 
@@ -12,7 +12,7 @@ use base qw(Tie::Hash Tie::Simple);
 
 sub _doit {
 	my $self = shift;
-	Tie::Simple::Util::_doit($self, 'Tie::Haash', @_);
+	Tie::Simple::Util::_doit($self, 'Tie::Hash', @_);
 }
 
 sub FETCH { shift->_doit('FETCH', @_) }
